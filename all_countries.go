@@ -11,7 +11,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/remizovm/geonames/models"
+	"github.com/ailgroup/geonames/models"
 )
 
 const allCountriesURI = `allCountries.zip`
@@ -29,7 +29,7 @@ func (c *Client) AllCountries() (map[int]*models.Feature, error) {
 
 // CallAllCountries calls the passed handler on each extracted feature.
 func CallAllCountries(handler func(*models.Feature)) error {
-	url := fmt.Sprintf("%s%s", geonamesURL, allCountriesURI)
+	url := fmt.Sprintf("%s%s", GeonamesURL, allCountriesURI)
 
 	dat, err := httpGetNew(url)
 	if err != nil {

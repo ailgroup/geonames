@@ -3,7 +3,7 @@ package geonames
 import (
 	"strconv"
 
-	"github.com/remizovm/geonames/models"
+	"github.com/ailgroup/geonames/models"
 )
 
 const admin1CodesASCIIURL = `admin1CodesASCII.txt`
@@ -13,7 +13,7 @@ func (c *Client) Admin1CodesASCII() ([]*models.AdminCode, error) {
 	var err error
 	var result []*models.AdminCode
 
-	data, err := httpGet(geonamesURL + admin1CodesASCIIURL)
+	data, err := httpGet(GeonamesURL + admin1CodesASCIIURL)
 	if err != nil {
 		return nil, err
 	}

@@ -5,7 +5,7 @@ import (
 	"log"
 	"strconv"
 
-	"github.com/remizovm/geonames/models"
+	"github.com/ailgroup/geonames/models"
 )
 
 const deletesURL = `deletes-%d-%02d-%02d.txt`
@@ -15,7 +15,7 @@ func (c *Client) Deletes(year, month, day int) (map[int]*models.DeleteOp, error)
 	var err error
 	uri := fmt.Sprintf(deletesURL, year, month, day)
 
-	data, err := httpGet(geonamesURL + uri)
+	data, err := httpGet(GeonamesURL + uri)
 	if err != nil {
 		return nil, err
 	}

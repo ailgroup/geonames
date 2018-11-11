@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/remizovm/geonames/models"
+	"github.com/ailgroup/geonames/models"
 )
 
 const postalCodesURL = `http://download.geonames.org/export/zip/%s.zip`

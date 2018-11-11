@@ -4,7 +4,7 @@ import (
 	"log"
 	"strconv"
 
-	"github.com/remizovm/geonames/models"
+	"github.com/ailgroup/geonames/models"
 )
 
 const alternateNamesURL = `alternateNames.zip`
@@ -14,7 +14,7 @@ func (c *Client) AlternateNames() ([]*models.AlternateName, error) {
 	var err error
 	var result []*models.AlternateName
 
-	zipped, err := httpGet(geonamesURL + alternateNamesURL)
+	zipped, err := httpGet(GeonamesURL + alternateNamesURL)
 	if err != nil {
 		return nil, err
 	}

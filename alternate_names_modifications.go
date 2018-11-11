@@ -5,7 +5,7 @@ import (
 	"log"
 	"strconv"
 
-	"github.com/remizovm/geonames/models"
+	"github.com/ailgroup/geonames/models"
 )
 
 const alternateNamesModificationsURL = `alternateNamesModifications-%d-%02d-%02d.txt`
@@ -17,7 +17,7 @@ func (c *Client) AlternateNamesModifications(year, month, day int) (map[int]*mod
 
 	uri := fmt.Sprintf(alternateNamesModificationsURL, year, month, day)
 
-	data, err := httpGet(geonamesURL + uri)
+	data, err := httpGet(GeonamesURL + uri)
 	if err != nil {
 		return nil, err
 	}

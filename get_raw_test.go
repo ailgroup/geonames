@@ -14,7 +14,7 @@ func TestGetRaw(t *testing.T) {
 		var s *bufio.Scanner
 
 		txtName := "timeZones.txt"
-		txtURL := geonamesURL + txtName
+		txtURL := GeonamesURL + txtName
 
 		s, err = getRaw(txtURL, txtName)
 		So(err, ShouldBeNil)

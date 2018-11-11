@@ -16,8 +16,8 @@ import (
 )
 
 const (
-	geonamesURL   = "http://download.geonames.org/export/dump/"
-	commentSymbol = byte('#')
+	GeonamesURL   = "http://download.geonames.org/export/dump/"
+	CommentSymbol = byte('#')
 	newLineSymbol = byte('\n')
 	delimSymbol   = byte('\t')
 	boolTrue      = "1"
@@ -167,7 +167,7 @@ func sParse(s *bufio.Scanner, headerLength uint, f func([]string) bool) {
 		if len(line) == 0 {
 			continue
 		}
-		if line[0] == commentSymbol {
+		if line[0] == CommentSymbol {
 			continue
 		}
 		rawSplit = strings.Split(line, "\t")
@@ -191,7 +191,7 @@ func parse(data []byte, headerLength int, f func([][]byte) bool) {
 		if len(rawSplit[i]) == 0 {
 			continue
 		}
-		if rawSplit[i][0] == commentSymbol {
+		if rawSplit[i][0] == CommentSymbol {
 			continue
 		}
 		rawLineSplit = bytes.Split(rawSplit[i], []byte{delimSymbol})

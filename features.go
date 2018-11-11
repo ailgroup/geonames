@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/remizovm/geonames/models"
+	"github.com/ailgroup/geonames/models"
 )
 
 // Features returns all features for the specified country iso2 code
@@ -19,7 +19,7 @@ func (c *Client) Features(iso2code string) ([]*models.Feature, error) {
 		return nil, errors.New("Invalid iso2code")
 	}
 
-	uri := fmt.Sprintf("%s%s.zip", geonamesURL, strings.ToUpper(iso2code))
+	uri := fmt.Sprintf("%s%s.zip", GeonamesURL, strings.ToUpper(iso2code))
 	zipped, err := httpGet(uri)
 	if err != nil {
 		return nil, err
